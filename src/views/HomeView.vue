@@ -1,9 +1,15 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import DinoPage from '@/views/DinoPage.vue'
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <Suspense>
+    <DinoPage />
+
+    <template #fallback>
+      <div class="placeholder">
+        Downloading ...
+      </div>
+    </template>
+  </Suspense>
 </template>
